@@ -1,0 +1,1 @@
+All Major concepts of Oops in Javascript
