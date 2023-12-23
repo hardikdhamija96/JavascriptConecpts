@@ -401,6 +401,7 @@ Theory:
 
 ### 16\. Call, Apply, and Bind:
 
+#### Example:
 
 
 ```javascript
@@ -418,9 +419,54 @@ const boundFunc = getValue.bind(obj, 'The answer is ');
 boundFunc(); // Output: The answer is 42
 ```
 
-Theory:
+#### Theory:
 
--   `call`, `apply`, `bind`: Methods to control the value of `this` in a function.
+-   `this` in JavaScript:
+
+    -   `this` is a special keyword in JavaScript that refers to the context in which a function is executed.
+    -   Its value is dynamically determined at runtime based on how a function is invoked.
+-   `call`, `apply`, and `bind`:
+
+    -   These are methods available for every JavaScript function, allowing control over the value of `this` during function execution.
+
+#### Details:
+
+1.  `call`:
+
+    -   Invokes the function immediately.
+    -   Accepts the context (the value of `this` inside the function) as the first parameter, followed by function arguments individually.
+
+    javascriptCopy code
+
+    `getValue.call(obj, 'The answer is '); // Output: The answer is 42`
+
+2.  `apply`:
+
+    -   Similar to `call`, but accepts the context as the first parameter and an array or array-like object of arguments.
+
+    javascriptCopy code
+
+    `getValue.apply(obj, ['The answer is ']); // Output: The answer is 42`
+
+3.  `bind`:
+
+    -   Returns a new function with the specified context, without immediately invoking the function.
+    -   Useful for creating functions with a fixed `this` value.
+
+    ```javascript
+    const boundFunc = getValue.bind(obj, 'The answer is ');
+    boundFunc(); // Output: The answer is 42
+    ```
+
+#### Understanding `this`:
+
+-   Default `this`:
+
+    -   In a regular function call, `this` inside the function refers to the global object (`window` in the browser, `global` in Node.js).
+-   Control with `call`, `apply`, and `bind`:
+
+    -   `call` and `apply` allow for immediate function invocation with a specified `this` value.
+    -   `bind` returns a new function with the specified `this` value, which can be invoked later.
 
 ### 17\. Prototype and Prototypal Inheritance:
 
