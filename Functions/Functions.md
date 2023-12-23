@@ -436,19 +436,19 @@ boundFunc(); // Output: The answer is 42
     -   Invokes the function immediately.
     -   Accepts the context (the value of `this` inside the function) as the first parameter, followed by function arguments individually.
 
-    javascriptCopy code
+    ```javascript
+    getValue.call(obj, 'The answer is '); // Output: The answer is 42
+    ```
 
-    `getValue.call(obj, 'The answer is '); // Output: The answer is 42`
-
-2.  `apply`:
+3.  `apply`:
 
     -   Similar to `call`, but accepts the context as the first parameter and an array or array-like object of arguments.
 
-    javascriptCopy code
+    ```javascript
+    getValue.apply(obj, ['The answer is ']); // Output: The answer is 42
+    ```
 
-    `getValue.apply(obj, ['The answer is ']); // Output: The answer is 42`
-
-3.  `bind`:
+4.  `bind`:
 
     -   Returns a new function with the specified context, without immediately invoking the function.
     -   Useful for creating functions with a fixed `this` value.
