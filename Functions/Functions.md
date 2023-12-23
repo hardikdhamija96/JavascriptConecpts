@@ -250,7 +250,7 @@ Theory:
 
 ### 11\. Rest Parameters:
 
-
+#### Example:
 
 ```javascript
 // Rest Parameters Example
@@ -261,13 +261,18 @@ function sum(...numbers) {
 console.log(sum(1, 2, 3, 4)); // Output: 10
 ```
 
-Theory:
+#### Theory:
 
--   Rest Parameters: Allow a function to accept an indefinite number of arguments as an array.
+-   Rest Parameters:
+    -   Definition: Allow a function to accept an indefinite number of arguments as an array.
+    -   Syntax: `function functionName(...parameterName) { /* code */ }`
+    -   Usage: Collects remaining arguments into an array, enabling functions to handle variable numbers of inputs.
+
+* * * * *
 
 ### 12\. Spread Operator:
 
-
+#### Example:
 
 ```javascript
 // Spread Operator Example
@@ -276,9 +281,24 @@ const newArr = [...arr, 4, 5];
 console.log(newArr); // Output: [1, 2, 3, 4, 5]
 ```
 
-Theory:
+#### Theory:
 
--   Spread Operator: Used to spread the elements of an array or object into another array or object.
+-   Spread Operator:
+    -   Definition: Used to spread the elements of an array or object into another array or object.
+    -   Syntax: `const newArray = [...existingArray];` or `const newObj = { ...existingObj };`
+    -   Usage: Unpacks elements from arrays or properties from objects, facilitating concise array/object creation or combining.
+
+#### Difference:
+
+-   Rest Parameters vs. Spread Operator:
+    -   Rest: Gathers parameters into an array in function definitions.
+    -   Spread: Spreads elements or properties from an array or object into another array or object.
+    -   Key Distinction: Rest is used in function parameters, while Spread is used in array or object literals.
+
+Understanding this difference is crucial:
+
+-   Rest Parameters: Used in function definitions to collect arguments into an array.
+-   Spread Operator: Used in array or object literals to spread elements or properties.
 
 ### 13\. Return Statement:
 
