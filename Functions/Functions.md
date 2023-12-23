@@ -205,9 +205,30 @@ function sum() {
 console.log(sum(1, 2, 3, 4)); // Output: 10
 ```
 
-Theory:
+-   Definition: The `arguments` object is a local variable in JavaScript functions, providing access to all passed arguments, even when not explicitly declared in the function signature.
 
--   Arguments Object: An array-like object accessible inside functions, holding all arguments passed to the function.
+-   Usage: It enables functions to handle a variable number of arguments dynamically.
+
+#### Key Points:
+
+1.  Dynamic Nature:
+
+    -   `arguments` adapts to the number and values of passed arguments.
+2.  No Parameter Declaration:
+
+    -   Functions can use `arguments` without explicitly declaring parameters.
+3.  Not in Arrow Functions:
+
+    -   Arrow functions lack their own `arguments` object; use rest parameters instead.
+
+#### Considerations:
+
+1.  Array-Like Structure:
+
+    -   `arguments` is array-like but lacks array methods.
+2.  Modern Alternatives:
+
+    -   Rest parameters (`...args`) are a modern alternative for handling variable arguments, offering better readability and versatility.
 
 ### 10\. Default Parameters:
 
