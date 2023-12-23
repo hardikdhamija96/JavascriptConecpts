@@ -320,7 +320,7 @@ Theory:
 
 ### 14\. Arrow Functions:
 
-
+#### Example:
 
 ```javascript
 // Arrow Function Example
@@ -328,9 +328,56 @@ const square = x => x * x;
 console.log(square(5)); // Output: 25
 ```
 
-Theory:
+#### Theory:
 
--   Arrow Functions: Provide a concise syntax and do not bind their own `this` value.
+-   Arrow Functions:
+    -   Syntax: `(parameters) => expression`
+    -   Conciseness: Provide a concise syntax for writing functions.
+    -   No `this` Binding: Arrow functions do not bind their own `this` value.
+
+#### Details:
+
+-   Conciseness:
+
+    -   Arrow functions are especially useful for short, one-expression functions, reducing boilerplate code.
+-   No `this` Binding:
+
+    -   Traditional functions have their own `this` context, which can cause confusion in certain scenarios, especially with asynchronous code.
+    -   Arrow functions, however, inherit the `this` value from their surrounding (enclosing) scope, eliminating the need for functions like `bind`, `call`, or `apply`.
+
+#### Example with `this`:
+
+```javascript
+// Traditional Function with `this` Issue
+function Example() {
+  this.value = 10;
+
+  // setTimeout creates a new context, leading to loss of `this`
+  setTimeout(function () {
+    console.log(this.value); // undefined (loses `this` context)
+  }, 1000);
+}
+
+new Example();
+```
+
+#### Arrow Function Solution:
+
+```javascript
+// Arrow Function maintaining `this` context
+function Example() {
+  this.value = 10;
+
+  // Arrow function inherits `this` from the enclosing scope
+  setTimeout(() => {
+    console.log(this.value); // 10 (inherits `this` from the enclosing scope)
+  }, 1000);
+}
+
+new Example();
+```
+
+In the traditional function example, `this` inside `setTimeout` is different from `this` in the `Example` constructor. Arrow functions resolve this issue by inheriting `this` from the surrounding scope, making them particularly handy in certain situations, such as callback functions or when dealing with asynchronous code.
 
 ### 15\. This Keyword:
 
